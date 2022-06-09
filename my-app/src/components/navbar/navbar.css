@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Noto+Serif+Display:wght@300;700&family=Red+Hat+Display:wght@400;500&display=swap");
+
+.navbar {
+  height: 50px;
+  background-color: #011325;
+  display: flex;
+  justify-content: center;
+}
+
+.navContainer {
+  width: 100%;
+  max-width: 1024px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navLink {
+  margin-left: 20px;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
