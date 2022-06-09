@@ -6,7 +6,9 @@ function Navbar() {
     <div className="navbar">
       <div className="navContainer">
         <div className="navItems">
-          <a className="navLink">Womens</a>
+          <a className="navLink" href="/womens">
+            Womens
+          </a>
           <a className="navLink">Mens</a>
           <a className="navLink">Jewelery</a>
           <a className="navLink">Electronics</a>

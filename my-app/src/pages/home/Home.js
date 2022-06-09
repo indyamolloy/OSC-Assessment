@@ -18,7 +18,7 @@ function Home() {
   return (
     <div>
       <SearchNavbar />
-      <Navbar />
+      <Navbar items={items} />
       <AllItems items={items} />
     </div>
   );
