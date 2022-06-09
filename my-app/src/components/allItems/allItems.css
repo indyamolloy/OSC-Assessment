@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.allItemsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 80%;
+  justify-content: space-between;
+}
+
+.itemContainer {
+  width: 15vw;
+  padding: 50px;
+}
+
+.productImg {
+  height: 30vh;
+  width: 100%;
+}
+
+.productDesc {
+  max-height: 10ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

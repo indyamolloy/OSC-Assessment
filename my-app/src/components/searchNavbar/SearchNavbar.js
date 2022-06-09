@@ -1,5 +1,7 @@
 import React from "react";
 import "./searchNavbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 
 function searchNavbar() {
   return (
@@ -10,7 +12,7 @@ function searchNavbar() {
           className="searchInput"
           placeholder="Search items &  categories"
         ></input>
-        <h4>Basket</h4>
+        <FontAwesomeIcon icon={faBasketShopping} />
       </div>
     </div>
   );
