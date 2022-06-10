@@ -1,0 +1,13 @@
+.basketIcon {
+  z-index: 5;
+  position: absolute;
+}
+
+.modal {
+  background-color: white;
+  height: 100vh;
+  width: 50vw;
+  position: absolute;
+  right: 0;
+  z-index: 0;
+}
