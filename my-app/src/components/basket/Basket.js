@@ -20,6 +20,10 @@ function Basket({
   // function increment() {
   //   setQuantity(quantity + 1);
   // }
+  const totalPrice = basket.reduce(
+    (total, item) => item.price * item.quantity,
+    0
+  );
 
   return (
     <div>
@@ -28,18 +32,21 @@ function Basket({
         icon={faBasketShopping}
         onClick={handleClick}
       />
+      <span>{basket.length}</span>
       {modal && (
         <div className="modalBackground">
           <div className="modal">
             <h1>Basket Items:</h1>
             <div>
               {basket.map((item) => {
+                const totalPrice = item.price * item.quantity;
+                const roundedTotal = totalPrice.toFixed(2);
                 return (
                   <div>
                     <div className="itemContainer">
                       <img className="itemImage" src={item.image} alt="" />
                       <p>{item.name}</p>
-                      <p>£{item.price * item.quantity}</p>
+                      <p>£{roundedTotal}</p>
                       <div className="quantityCounter">
                         <button
                           onClick={() => handleDecrementQty(item.id)}
@@ -54,12 +61,16 @@ function Basket({
                         remove
                       </button>
                     </div>
-                    <div>
-                      <h3>Subtotal: </h3>
-                    </div>
                   </div>
                 );
               })}
+              <div>
+                {basket.length >= 1 ? (
+                  <h3>Subtotal: £{totalPrice.toFixed(2)}</h3>
+                ) : (
+                  <h3>Nothing in your basket...</h3>
+                )}
+              </div>
             </div>
           </div>
         </div>
