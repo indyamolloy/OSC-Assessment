@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import FeaturedItems from "../../components/itemsList/itemsList";
+import ItemList from "../../components/itemsList/ItemsList";
 import Navbar from "../../components/navbar/Navbar";
 import SearchNavbar from "../../components/searchNavbar/SearchNavbar";
 
-function Home({ items }) {
+function Home({ items, handleAdd }) {
+  const [basket, setBasket] = useState([]);
   // const [items, setItems] = useState([]);
 
   // useEffect(() => {
@@ -17,10 +18,8 @@ function Home({ items }) {
 
   return (
     <div>
-      <SearchNavbar />
-      <Navbar items={items} />
       <h1>Featured Items</h1>
-      <FeaturedItems items={items} category="rating" />
+      <ItemList items={items} category="rating" handleAdd={handleAdd} />
     </div>
   );
 }

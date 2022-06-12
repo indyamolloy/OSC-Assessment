@@ -1,6 +1,6 @@
 import "./itemsList.css";
 
-function ItemsList({ items, category }) {
+function ItemsList({ items, category, handleAdd }) {
   //Filter out only items with rating > 4 for home page
   const featuredItems = items.filter(function (item) {
     if (category === "rating") {
@@ -22,14 +22,20 @@ function ItemsList({ items, category }) {
         <div className="allItemsContainer">
           {featuredItems.map((item) => {
             return (
-              <div className="itemContainer">
+              <div className="itemContainer" key={item.id}>
                 <img className="productImg" src={item.image} alt="product" />
                 <h2 className="productTitle">{item.title}</h2>
                 <h2 className="productPrice">£{item.price}</h2>
                 <p className="productDesc">
                   {item.description.substring(0, 100)}...
                 </p>
-                <button>Add</button>
+                <button
+                  onClick={() =>
+                    handleAdd(item.id, item.image, item.title, item.price)
+                  }
+                >
+                  Add
+                </button>
               </div>
             );
           })}

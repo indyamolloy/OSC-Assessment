@@ -1,15 +1,13 @@
 import React from "react";
 import SearchNavbar from "../../components/searchNavbar/SearchNavbar";
 import Navbar from "../../components/navbar/Navbar";
-import FeaturedItems from "../../components/itemsList/itemsList";
+import ItemList from "../../components/itemsList/ItemsList";
 
-function Womens({ items }) {
+function Womens({ items, handleAdd }) {
   return (
     <div>
-      <SearchNavbar />
-      <Navbar items={items} />
       <h1>Women's Clothing</h1>
-      <FeaturedItems items={items} category="womens" />
+      <ItemList items={items} category="womens" handleAdd={handleAdd} />
     </div>
   );
 }
