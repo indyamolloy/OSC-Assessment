@@ -32,7 +32,17 @@ function App() {
         { id: id, image: image, name: name, price: price, quantity: 1 },
       ]);
     } else {
-      alert("in basket already!");
+      const duplicateItem = basket.find((item) => item.id === id);
+      console.log(basket.indexOf(duplicateItem));
+      const index = basket.indexOf(duplicateItem);
+      setBasket([
+        ...basket.slice(0, index),
+        {
+          ...duplicateItem,
+          quantity: duplicateItem.quantity + 1,
+        },
+        ...basket.slice(index + 1),
+      ]);
     }
   }
 
