@@ -68,7 +68,7 @@ function Basket({
                 {basket.length >= 1 ? (
                   <h3>Subtotal: £{totalPrice.toFixed(2)}</h3>
                 ) : (
-                  <h3>Nothing in your basket...</h3>
+                  <h3>Your shopping cart is empty</h3>
                 )}
               </div>
             </div>

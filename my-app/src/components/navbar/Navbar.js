@@ -19,7 +19,7 @@ function Navbar() {
           <Link className="navLink" to="/electronics">
             Electronics
           </Link>
-          <Link className="navLink" to="/">
+          <Link className="navLink featured" to="/">
             Featured Items
           </Link>
         </div>

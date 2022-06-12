@@ -1,7 +1,7 @@
 import React from "react";
 import "./searchNavbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faHeart } from "@fortawesome/free-solid-svg-icons";
 import Basket from "../basket/Basket";
 
 function searchNavbar({
@@ -25,15 +25,20 @@ function searchNavbar({
           onChange={handleChange}
           value={value}
         ></input>
-        <button onClick={handleSearch}>Search</button>
-        <Basket
-          basket={basket}
-          handleClick={handleClick}
-          modal={modal}
-          handleAdd={handleAdd}
-          handleDecrementQty={handleDecrementQty}
-          handleRemove={handleRemove}
-        />
+        <button className="searchBtn" onClick={handleSearch}>
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </button>
+        <div className="iconsContainer">
+          <FontAwesomeIcon className="icon" icon={faHeart} />
+          <Basket
+            basket={basket}
+            handleClick={handleClick}
+            modal={modal}
+            handleAdd={handleAdd}
+            handleDecrementQty={handleDecrementQty}
+            handleRemove={handleRemove}
+          />
+        </div>
       </div>
     </div>
   );

@@ -24,3 +24,13 @@
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
+
+.navLink:focus {
+  text-decoration: underline;
+}
+
+.featured {
+  background-color: #fe4e3a;
+  height: 50px;
+  padding: 15.5px;
+}

@@ -1,6 +1,11 @@
 .basketIcon {
   z-index: 5;
   position: absolute;
+  height: 4vh;
+}
+
+.basketIcon:hover {
+  cursor: pointer;
 }
 
 .modal {
