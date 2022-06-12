@@ -3,16 +3,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 import "./basket.css";
 
-function Basket({ basket, handleClick, modal }) {
-  const [quantity, setQuantity] = useState(1);
+function Basket({
+  basket,
+  handleClick,
+  modal,
+  handleAdd,
+  handleDecrementQty,
+  handleRemove,
+}) {
+  // const [quantity, setQuantity] = useState(1);
 
-  function decrement() {
-    setQuantity(quantity - 1);
-  }
+  // function decrement() {
+  //   setQuantity(quantity - 1);
+  // }
 
-  function increment() {
-    setQuantity(quantity + 1);
-  }
+  // function increment() {
+  //   setQuantity(quantity + 1);
+  // }
 
   return (
     <div>
@@ -35,15 +42,17 @@ function Basket({ basket, handleClick, modal }) {
                       <p>£{item.price * item.quantity}</p>
                       <div className="quantityCounter">
                         <button
-                          onClick={decrement}
-                          disabled={quantity <= 1 ? true : false}
+                          onClick={() => handleDecrementQty(item.id)}
+                          disabled={item.quantity <= 1 ? true : false}
                         >
                           -
                         </button>
                         <p>{item.quantity}</p>
-                        <button onClick={increment}>+</button>
+                        <button onClick={() => handleAdd(item.id)}>+</button>
                       </div>
-                      <p>remove</p>
+                      <button onClick={() => handleRemove(item.id)}>
+                        remove
+                      </button>
                     </div>
                     <div>
                       <h3>Subtotal: </h3>

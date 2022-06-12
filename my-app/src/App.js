@@ -46,13 +46,39 @@ function App() {
     }
   }
 
+  function handleDecrementQty(id) {
+    const clickedItem = basket.find((item) => item.id === id);
+    const index = basket.indexOf(clickedItem);
+    setBasket([
+      ...basket.slice(0, index),
+      {
+        ...clickedItem,
+        quantity: clickedItem.quantity - 1,
+      },
+      ...basket.slice(index + 1),
+    ]);
+  }
+
+  function handleRemove(id) {
+    const clickedItem = basket.find((item) => item.id === id);
+    const index = basket.indexOf(clickedItem);
+    setBasket([...basket.slice(0, index), ...basket.slice(index + 1)]);
+  }
+
   function handleClick() {
     setModal(!modal);
   }
 
   return (
     <BrowserRouter>
-      <SearchNavbar basket={basket} handleClick={handleClick} modal={modal} />
+      <SearchNavbar
+        basket={basket}
+        handleClick={handleClick}
+        modal={modal}
+        handleAdd={handleAdd}
+        handleDecrementQty={handleDecrementQty}
+        handleRemove={handleRemove}
+      />
       <Navbar />
       <Routes>
         <Route

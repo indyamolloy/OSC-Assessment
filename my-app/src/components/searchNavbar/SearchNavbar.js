@@ -4,7 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 import Basket from "../basket/Basket";
 
-function searchNavbar({ basket, handleClick, modal }) {
+function searchNavbar({
+  basket,
+  handleClick,
+  modal,
+  handleAdd,
+  handleDecrementQty,
+  handleRemove,
+}) {
   return (
     <div className="searchNavbar">
       <div className="navSearchbarContainer">
@@ -13,7 +20,14 @@ function searchNavbar({ basket, handleClick, modal }) {
           className="searchInput"
           placeholder="Search items &  categories"
         ></input>
-        <Basket basket={basket} handleClick={handleClick} modal={modal} />
+        <Basket
+          basket={basket}
+          handleClick={handleClick}
+          modal={modal}
+          handleAdd={handleAdd}
+          handleDecrementQty={handleDecrementQty}
+          handleRemove={handleRemove}
+        />
       </div>
     </div>
   );
