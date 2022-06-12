@@ -32,7 +32,7 @@ function App() {
         { id: id, image: image, name: name, price: price, quantity: 1 },
       ]);
     } else {
-      alert("already in basket!");
+      alert("in basket already!");
     }
   }
 
