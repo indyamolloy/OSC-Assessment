@@ -22,10 +22,18 @@ function App() {
       setItems(data);
     };
     fetchData();
-  });
+  }, []);
 
   function handleAdd(id, image, name, price) {
-    setBasket([...basket, { id: id, image: image, name: name, price: price }]);
+    const inBasket = basket.some((item) => item.id === id);
+    if (!inBasket) {
+      setBasket([
+        ...basket,
+        { id: id, image: image, name: name, price: price, quantity: 1 },
+      ]);
+    } else {
+      alert("already in basket!");
+    }
   }
 
   function handleClick() {

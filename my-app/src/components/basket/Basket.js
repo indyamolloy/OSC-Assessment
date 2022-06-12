@@ -32,7 +32,7 @@ function Basket({ basket, handleClick, modal }) {
                     <div className="itemContainer">
                       <img className="itemImage" src={item.image} alt="" />
                       <p>{item.name}</p>
-                      <p>£{item.price}</p>
+                      <p>£{item.price * item.quantity}</p>
                       <div className="quantityCounter">
                         <button
                           onClick={decrement}
@@ -40,7 +40,7 @@ function Basket({ basket, handleClick, modal }) {
                         >
                           -
                         </button>
-                        <p>{quantity}</p>
+                        <p>{item.quantity}</p>
                         <button onClick={increment}>+</button>
                       </div>
                       <p>remove</p>
