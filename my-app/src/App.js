@@ -13,6 +13,10 @@ function App() {
   const [items, setItems] = useState([]);
   const [basket, setBasket] = useState([]);
   const [modal, setModal] = useState(false);
+  const [input, setInput] = useState("");
+  const [searchInput, setSearchInput] = useState("");
+  const [searchedItems, setSearchedItems] = useState([]);
+  const [itemsSearched, setItemsSearched] = useState(false);
 
   //fetching data from api and setting state to object
   useEffect(() => {
@@ -22,8 +26,9 @@ function App() {
       setItems(data);
     };
     fetchData();
-  }, []);
+  }, [setItems, searchInput]);
 
+  //add and increment items in basket
   function handleAdd(id, image, name, price) {
     const inBasket = basket.some((item) => item.id === id);
     if (!inBasket) {
@@ -46,6 +51,7 @@ function App() {
     }
   }
 
+  //decrement number of items in basket
   function handleDecrementQty(id) {
     const clickedItem = basket.find((item) => item.id === id);
     const index = basket.indexOf(clickedItem);
@@ -59,14 +65,36 @@ function App() {
     ]);
   }
 
+  //remove button in modal
   function handleRemove(id) {
     const clickedItem = basket.find((item) => item.id === id);
     const index = basket.indexOf(clickedItem);
     setBasket([...basket.slice(0, index), ...basket.slice(index + 1)]);
   }
 
+  //open modal
   function handleClick() {
     setModal(!modal);
+  }
+
+  //Search for items
+  function handleChange(e) {
+    //setInput for value to be passed (controlled input)
+    setInput(e.target.value);
+    //Seach title and description for matching items
+    const result = items.filter(
+      (item) =>
+        item.description.toLowerCase().includes(e.target.value.toLowerCase()) ||
+        item.title.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    setSearchInput(result);
+  }
+
+  //Search for items when button clicked
+  function handleSearch() {
+    setSearchedItems(searchInput);
+    setItemsSearched(!itemsSearched);
+    setInput("");
   }
 
   return (
@@ -78,28 +106,56 @@ function App() {
         handleAdd={handleAdd}
         handleDecrementQty={handleDecrementQty}
         handleRemove={handleRemove}
+        handleChange={handleChange}
+        handleSearch={handleSearch}
+        value={input}
       />
       <Navbar />
       <Routes>
         <Route
           path="/"
-          element={<Home items={items} handleAdd={handleAdd} />}
+          element={
+            <Home
+              items={itemsSearched ? searchedItems : items}
+              handleAdd={handleAdd}
+            />
+          }
         />
         <Route
           path="/womens"
-          element={<Womens items={items} handleAdd={handleAdd} />}
+          element={
+            <Womens
+              items={itemsSearched ? searchedItems : items}
+              handleAdd={handleAdd}
+            />
+          }
         />
         <Route
           path="/mens"
-          element={<Mens items={items} handleAdd={handleAdd} />}
+          element={
+            <Mens
+              items={itemsSearched ? searchedItems : items}
+              handleAdd={handleAdd}
+            />
+          }
         />
         <Route
           path="/jewelery"
-          element={<Jewelery items={items} handleAdd={handleAdd} />}
+          element={
+            <Jewelery
+              items={itemsSearched ? searchedItems : items}
+              handleAdd={handleAdd}
+            />
+          }
         />
         <Route
           path="/electronics"
-          element={<Electronics items={items} handleAdd={handleAdd} />}
+          element={
+            <Electronics
+              items={itemsSearched ? searchedItems : items}
+              handleAdd={handleAdd}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>

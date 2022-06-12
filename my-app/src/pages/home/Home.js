@@ -3,7 +3,7 @@ import ItemList from "../../components/itemsList/ItemsList";
 import Navbar from "../../components/navbar/Navbar";
 import SearchNavbar from "../../components/searchNavbar/SearchNavbar";
 
-function Home({ items, handleAdd }) {
+function Home({ items, handleAdd, breadcrumb }) {
   const [basket, setBasket] = useState([]);
   // const [items, setItems] = useState([]);
 

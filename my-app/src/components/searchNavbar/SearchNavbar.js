@@ -11,6 +11,9 @@ function searchNavbar({
   handleAdd,
   handleDecrementQty,
   handleRemove,
+  handleChange,
+  handleSearch,
+  value,
 }) {
   return (
     <div className="searchNavbar">
@@ -19,7 +22,10 @@ function searchNavbar({
         <input
           className="searchInput"
           placeholder="Search items &  categories"
+          onChange={handleChange}
+          value={value}
         ></input>
+        <button onClick={handleSearch}>Search</button>
         <Basket
           basket={basket}
           handleClick={handleClick}
