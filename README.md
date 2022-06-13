@@ -1,7 +1,7 @@
 # OSC Assessment
 This project was built with React.js. The completed project can be viewed at https://osc-store-9bk5vzqz5-indyamolloy.vercel.app/
 
-# Roadmap
+### Roadmap
  - [X] Items can be added to basket
  - [X] Basket items can be added/removed
  - [ ] Fix search functionality
