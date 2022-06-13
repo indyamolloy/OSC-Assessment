@@ -1,5 +1,5 @@
 import React from "react";
-import ItemsList from "../../components/itemsList/ItemsList";
+import ItemsList from "../../components/itemsList/ItemsList.js";
 
 function Mens({ items, handleAdd }) {
   return (
