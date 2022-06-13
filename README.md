@@ -5,6 +5,7 @@ This project was built with React.js. The completed project can be viewed at htt
  - [X] Items can be added to mini basket
  - [X] Mini basket can be viewed on all pages
  - [X] Basket items can be added/removed
+ - [X] Loading icon while waiting for API data 
  - [ ] Fix search functionality
  - [ ] Make wishlist section 
 
