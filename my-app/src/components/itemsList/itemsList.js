@@ -1,5 +1,7 @@
 import "./itemsList.css";
 import spinner from "./Spinner-1.9s-241px.gif";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 function ItemsList({ items, category, handleAdd }) {
   //Filter out only items with rating > 4 for home page
@@ -28,7 +30,10 @@ function ItemsList({ items, category, handleAdd }) {
                 <div className="itemContainer" key={item.id}>
                   <img className="productImg" src={item.image} alt="product" />
                   <h2 className="productTitle">{item.title}</h2>
-                  <h2 className="productPrice">£{item.price}</h2>
+                  <h2 className="productPrice">
+                    £{item.price}{" "}
+                    <FontAwesomeIcon className="heartItem" icon={faHeart} />
+                  </h2>
                   <p className="productDesc">
                     {item.description.substring(0, 100)}...
                   </p>

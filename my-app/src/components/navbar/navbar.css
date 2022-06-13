@@ -5,6 +5,12 @@
   background-color: #011325;
   display: flex;
   justify-content: center;
+  min-width: fit-content;
+  white-space: nowrap;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 65px;
 }
 
 .navContainer {
@@ -30,6 +36,7 @@
   background-color: #eeeeee;
   color: black;
   padding: 15.5px;
+  transition: background-color 0.4s;
 }
 .navLink:focus {
   text-decoration: underline;

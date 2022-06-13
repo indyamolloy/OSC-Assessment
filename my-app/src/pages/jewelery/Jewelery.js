@@ -1,6 +1,4 @@
 import React from "react";
-import SearchNavbar from "../../components/searchNavbar/SearchNavbar";
-import Navbar from "../../components/navbar/Navbar";
 
 import ItemsList from "../../components/itemsList/ItemsList";
 

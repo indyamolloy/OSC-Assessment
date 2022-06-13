@@ -36,6 +36,7 @@ function App() {
         ...basket,
         { id: id, image: image, name: name, price: price, quantity: 1 },
       ]);
+      setModal(true);
     } else {
       const duplicateItem = basket.find((item) => item.id === id);
       console.log(basket.indexOf(duplicateItem));
@@ -48,6 +49,7 @@ function App() {
         },
         ...basket.slice(index + 1),
       ]);
+      setModal(true);
     }
   }
 

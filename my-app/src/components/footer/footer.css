@@ -4,14 +4,27 @@
   padding: 10px 20px;
 }
 
+.footerLinks p {
+  font-size: 1em;
+  font-weight: 700;
+}
+
 .footerLinks {
   display: flex;
   flex-direction: column;
   color: white;
+  position: relative;
+  left: 50px;
 }
 
 .footerLink {
   color: white;
+  padding-bottom: 10px;
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
 }
 
 .copyright {

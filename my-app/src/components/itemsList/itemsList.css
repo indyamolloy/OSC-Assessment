@@ -1,6 +1,11 @@
+body {
+  overflow-x: hidden;
+}
+
 .container {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .allItemsContainer {
@@ -8,18 +13,24 @@
   flex-wrap: wrap;
   max-width: 80%;
   justify-content: space-between;
-  padding-bottom: 80px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  z-index: 0;
 }
 
 .itemContainer {
   width: 15vw;
   padding: 50px;
+  padding-bottom: 50px;
   max-height: 70vh;
+  margin-bottom: 40px;
 }
 
 .productImg {
   height: 30vh;
   width: 100%;
+  min-width: 150px;
+  max-width: 200px;
 }
 
 .productTitle {
@@ -27,15 +38,29 @@
   max-height: 60px;
   min-height: 50px;
   overflow: hidden;
+
+  text-overflow: ellipsis;
 }
 
 .productDesc {
   min-height: 20vh;
   max-height: 25vh;
+  overflow: scroll;
 }
 
 .productPrice {
   font-size: 1em;
+  font-weight: 400;
+}
+
+.heartItem {
+  font-size: 1em;
+  padding-left: 50px;
+  color: rgb(255, 80, 80);
+}
+
+.heartItem:hover {
+  cursor: pointer;
 }
 
 .addBtn {
@@ -48,7 +73,7 @@
   cursor: pointer;
 }
 
-.addBtn:hover {
+.addBtn :hover {
   background-color: #3aa735;
 }
 
@@ -57,6 +82,4 @@
   height: 50vh;
   justify-content: center;
   align-items: flex-start;
-  /* color: blue;
-  background-color: blue; */
 }

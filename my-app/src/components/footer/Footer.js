@@ -8,7 +8,7 @@ function Footer() {
   return (
     <div className="footerContainer">
       <div className="footerLinks">
-        <h5>Shop: </h5>
+        <p>Shop By Category </p>
         <Link
           className="footerLink"
           to="/womens"

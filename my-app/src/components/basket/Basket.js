@@ -22,7 +22,12 @@ function Basket({
   //   setQuantity(quantity + 1);
   // }
   const totalPrice = basket.reduce(
-    (total, item) => item.price * item.quantity,
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
+
+  const totalQuantity = basket.reduce(
+    (total, item) => total + item.quantity,
     0
   );
 
@@ -34,7 +39,7 @@ function Basket({
           icon={faBasketShopping}
           onClick={handleClick}
         />
-        <span className="basketNumber">{basket.length}</span>
+        <span className="basketNumber">{totalQuantity}</span>
       </div>
       {modal && (
         <div className="modalBackground">
@@ -45,7 +50,16 @@ function Basket({
               onClick={handleCloseModal}
             />
 
-            <h2 className="basketTitle">Shopping Bag</h2>
+            <h2 className="basketTitle">
+              Shopping Bag{" "}
+              {totalQuantity > 0 && (
+                <span className="itemsInBag">
+                  {totalQuantity > 1
+                    ? totalQuantity + " items"
+                    : totalQuantity + " item"}
+                </span>
+              )}
+            </h2>
             <div>
               {basket.map((item) => {
                 const totalPrice = item.price * item.quantity;
@@ -89,7 +103,9 @@ function Basket({
                 <hr className="hr" />
                 {basket.length >= 1 ? (
                   <div>
-                    <h3>Subtotal: £{totalPrice.toFixed(2)}</h3>
+                    <h3 className="subtotal">
+                      Subtotal: £{totalPrice.toFixed(2)}
+                    </h3>
                     <div className="checkoutContainer">
                       <button className="addBtn basketCheckoutBtn">
                         CHECKOUT NOW

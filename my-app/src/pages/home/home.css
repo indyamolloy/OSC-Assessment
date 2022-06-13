@@ -1,4 +1,6 @@
 .breadcrumbs {
   padding-left: 80px;
   font-weight: 300;
+  position: relative;
+  top: 50px;
 }
