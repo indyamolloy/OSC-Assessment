@@ -1,6 +1,7 @@
 import React from "react";
 import "./searchNavbar.css";
 import logo from "./logo.png";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
@@ -22,9 +23,9 @@ function searchNavbar({
     <div className="searchNavbar">
       <div className="navSearchbarContainer">
         {/* <h1 className="logo">OSC Store</h1> */}
-        <a href="/">
+        <Link to="/">
           <img className="logo" src={logo} alt="logo" />
-        </a>
+        </Link>
         <input
           className="searchInput"
           placeholder="Search items & categories"
