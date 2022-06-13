@@ -12,15 +12,7 @@ function Basket({
   handleRemove,
   handleCloseModal,
 }) {
-  // const [quantity, setQuantity] = useState(1);
-
-  // function decrement() {
-  //   setQuantity(quantity - 1);
-  // }
-
-  // function increment() {
-  //   setQuantity(quantity + 1);
-  // }
+  //calc price of item based on quantity
   const totalPrice = basket.reduce(
     (total, item) => total + item.price * item.quantity,
     0
