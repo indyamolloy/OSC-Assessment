@@ -1,12 +1,11 @@
 import React from "react";
-
-import ItemList from "../../components/itemsList/ItemsList";
+import ItemsList from "../../components/itemsList/ItemsList";
 
 function Womens({ items, handleAdd }) {
   return (
     <div>
       <h5 className="breadcrumbs">HOME / WOMENS</h5>
-      <ItemList items={items} category="womens" handleAdd={handleAdd} />
+      <ItemsList items={items} category="womens" handleAdd={handleAdd} />
     </div>
   );
 }

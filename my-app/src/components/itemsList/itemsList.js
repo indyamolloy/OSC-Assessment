@@ -6,19 +6,20 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 function ItemsList({ items, category, handleAdd }) {
   //Filter out only items with rating > 4 for home page
   const featuredItems = items.filter((item) => {
-    if (category === "rating") {
-      return item.rating.rate > 4;
-    } else if (category === "womens") {
-      return item.category === "women's clothing";
-    } else if (category === "mens") {
-      return item.category === "men's clothing";
-    } else if (category === "jewelery") {
-      return item.category === "jewelery";
-    } else if (category === "electronics") {
-      return item.category === "electronics";
-    } else {
-      return null;
-    }
+    // if (category === "rating") {
+    //   return item.rating.rate > 4;
+    // } else if (category === "womens") {
+    //   return item.category === "women's clothing";
+    // } else if (category === "mens") {
+    //   return item.category === "men's clothing";
+    // } else if (category === "jewelery") {
+    //   return item.category === "jewelery";
+    // } else if (category === "electronics") {
+    //   return item.category === "electronics";
+    // } else {
+    //   return null;
+    // }
+    return item.rating.rate > 4;
   });
   console.log(items);
 
