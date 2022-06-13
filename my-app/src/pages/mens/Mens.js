@@ -1,5 +1,4 @@
 import React from "react";
-
 import ItemList from "../../components/itemsList/ItemsList";
 
 function Mens({ items, handleAdd }) {

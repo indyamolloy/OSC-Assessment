@@ -1,5 +1,4 @@
 import React from "react";
-
 import ItemsList from "../../components/itemsList/ItemsList";
 
 function Jewelery({ items, handleAdd }) {
