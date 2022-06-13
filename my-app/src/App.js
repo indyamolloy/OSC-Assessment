@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Home from "./pages/home/Home";
-import Womens from "./pages/womens/Womens";
-import Mens from "./pages/mens/Mens";
-import Jewelery from "./pages/jewelery/Jewelery";
-import Electronics from "./pages/electronics/Electronics";
-import Navbar from "./components/navbar/Navbar";
-import SearchNavbar from "./components/searchNavbar/SearchNavbar";
-import Footer from "./components/footer/Footer";
+import Home from "./pages/home/Home.js";
+import Womens from "./pages/womens/Womens.js";
+import Mens from "./pages/mens/Mens.js";
+import Jewelery from "./pages/jewelery/Jewelery.js";
+import Electronics from "./pages/electronics/Electronics.js";
+import Navbar from "./components/navbar/Navbar.js";
+import SearchNavbar from "./components/searchNavbar/SearchNavbar.js";
+import Footer from "./components/footer/Footer.js";
 
 function App() {
   const [items, setItems] = useState([]);
