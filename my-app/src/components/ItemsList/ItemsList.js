@@ -16,6 +16,8 @@ function ItemsList({ items, category, handleAdd }) {
       return item.category === "jewelery";
     } else if (category === "electronics") {
       return item.category === "electronics";
+    } else {
+      return null;
     }
   });
   console.log(items);
