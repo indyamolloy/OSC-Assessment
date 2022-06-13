@@ -5,7 +5,6 @@ import Womens from "./pages/womens/Womens";
 import Mens from "./pages/mens/Mens";
 import Jewelery from "./pages/jewelery/Jewelery";
 import Electronics from "./pages/electronics/Electronics";
-import ItemList from "./components/itemsList/ItemsList";
 import Navbar from "./components/navbar/Navbar";
 import SearchNavbar from "./components/searchNavbar/SearchNavbar";
 
@@ -97,6 +96,10 @@ function App() {
     setInput("");
   }
 
+  function handleCloseModal() {
+    setModal(false);
+  }
+
   return (
     <BrowserRouter>
       <SearchNavbar
@@ -109,6 +112,7 @@ function App() {
         handleChange={handleChange}
         handleSearch={handleSearch}
         value={input}
+        handleCloseModal={handleCloseModal}
       />
       <Navbar />
       <Routes>

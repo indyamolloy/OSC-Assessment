@@ -14,6 +14,7 @@ function searchNavbar({
   handleChange,
   handleSearch,
   value,
+  handleCloseModal,
 }) {
   return (
     <div className="searchNavbar">
@@ -37,6 +38,7 @@ function searchNavbar({
             handleAdd={handleAdd}
             handleDecrementQty={handleDecrementQty}
             handleRemove={handleRemove}
+            handleCloseModal={handleCloseModal}
           />
         </div>
       </div>

@@ -30,11 +30,12 @@ function ItemsList({ items, category, handleAdd }) {
                   {item.description.substring(0, 100)}...
                 </p>
                 <button
+                  className="addBtn"
                   onClick={() =>
                     handleAdd(item.id, item.image, item.title, item.price)
                   }
                 >
-                  Add
+                  ADD TO CART
                 </button>
               </div>
             );

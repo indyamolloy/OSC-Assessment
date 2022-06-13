@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
+import { faBasketShopping, faXmark } from "@fortawesome/free-solid-svg-icons";
 import "./basket.css";
 
 function Basket({
@@ -10,6 +10,7 @@ function Basket({
   handleAdd,
   handleDecrementQty,
   handleRemove,
+  handleCloseModal,
 }) {
   // const [quantity, setQuantity] = useState(1);
 
@@ -27,46 +28,70 @@ function Basket({
 
   return (
     <div>
-      <FontAwesomeIcon
-        className="basketIcon"
-        icon={faBasketShopping}
-        onClick={handleClick}
-      />
-      <span>{basket.length}</span>
+      <div className="basketIconContainer">
+        <FontAwesomeIcon
+          className="basketIcon"
+          icon={faBasketShopping}
+          onClick={handleClick}
+        />
+        <span className="basketNumber">{basket.length}</span>
+      </div>
       {modal && (
         <div className="modalBackground">
           <div className="modal">
-            <h1>Basket Items:</h1>
+            <FontAwesomeIcon
+              className="closeModalBtn"
+              icon={faXmark}
+              onClick={handleCloseModal}
+            />
+
+            <h2 className="basketTitle">Shopping Bag</h2>
             <div>
               {basket.map((item) => {
                 const totalPrice = item.price * item.quantity;
                 const roundedTotal = totalPrice.toFixed(2);
                 return (
                   <div>
-                    <div className="itemContainer">
+                    <div className="basketItemContainer">
                       <img className="itemImage" src={item.image} alt="" />
-                      <p>{item.name}</p>
-                      <p>£{roundedTotal}</p>
-                      <div className="quantityCounter">
-                        <button
-                          onClick={() => handleDecrementQty(item.id)}
-                          disabled={item.quantity <= 1 ? true : false}
-                        >
-                          -
-                        </button>
-                        <p>{item.quantity}</p>
-                        <button onClick={() => handleAdd(item.id)}>+</button>
+                      <div className="itemDetails">
+                        <p className="itemName">{item.name}</p>
+                        <p className="itemPrice">£{roundedTotal}</p>
                       </div>
-                      <button onClick={() => handleRemove(item.id)}>
-                        remove
+                    </div>
+                    <div className="quantityCounter">
+                      <button
+                        className="basketQtyBtn"
+                        onClick={() => handleDecrementQty(item.id)}
+                        disabled={item.quantity <= 1 ? true : false}
+                      >
+                        -
+                      </button>
+                      <p className="qtyNumber">{item.quantity}</p>
+                      <button
+                        className="basketQtyBtn"
+                        onClick={() => handleAdd(item.id)}
+                      >
+                        +
                       </button>
                     </div>
+
+                    <button
+                      className="removeBtn"
+                      onClick={() => handleRemove(item.id)}
+                    >
+                      remove
+                    </button>
                   </div>
                 );
               })}
               <div>
+                <hr />
                 {basket.length >= 1 ? (
-                  <h3>Subtotal: £{totalPrice.toFixed(2)}</h3>
+                  <div>
+                    <h3>Subtotal: £{totalPrice.toFixed(2)}</h3>
+                    <button className="addBtn">CHECKOUT NOW</button>
+                  </div>
                 ) : (
                   <h3>Your shopping cart is empty</h3>
                 )}

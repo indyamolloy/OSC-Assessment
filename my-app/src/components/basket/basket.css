@@ -1,13 +1,37 @@
 .basketIcon {
-  z-index: 5;
   position: absolute;
   height: 4vh;
 }
 
 .basketIcon:hover {
   cursor: pointer;
+  color: #00b9e6;
 }
 
+.basketNumber {
+  background-color: #00b9e6;
+  position: relative;
+  z-index: 1;
+  right: -16px;
+  top: -8px;
+  border-radius: 100%;
+  padding: 4px 7px;
+  font-size: 12px;
+  color: white;
+  font-weight: bold;
+}
+
+.closeModalBtn {
+  border: none;
+  background-color: white;
+  color: gray;
+  position: fixed;
+  top: 5px;
+  right: 8px;
+  font-weight: bold;
+
+  height: 1.5rem;
+}
 .modal {
   background-color: rgb(255, 255, 255);
   height: 100%;
@@ -30,6 +54,60 @@
   z-index: 1;
 }
 
+.basketTitle {
+  font-size: 1.2rem;
+  padding: 20px 20px;
+}
+
+.basketItemContainer {
+  display: flex;
+  width: 100%;
+  padding: 10px 25px;
+}
+
 .itemImage {
   height: 10vw;
+  min-height: 100px;
+  padding-right: 20px;
+}
+.itemName {
+  font-weight: bold;
+  width: 70%;
+}
+
+.itemPrice {
+  position: fixed;
+  right: 0;
+  padding-right: 20px;
+}
+
+.quantityCounter {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  padding: 5px 25px;
+}
+
+.basketQtyBtn {
+  border: 0.5px solid black;
+  color: black;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.qtyNumber {
+  padding: 5px 10px;
+  /* height: 29px; */
+  border: 0.5px solid black;
+  align-self: center;
+}
+
+.removeBtn {
+  border: none;
+  background-color: white;
+  text-decoration: underline;
+  padding: 0 25px;
 }
