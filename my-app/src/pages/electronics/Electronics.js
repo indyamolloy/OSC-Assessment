@@ -1,5 +1,5 @@
 import React from "react";
-import ItemList from "../../components/itemsList/ItemsList";
+import ItemList from "../../components/ItemsList/ItemsList";
 
 function Electronics({ items, handleAdd }) {
   return (
