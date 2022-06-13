@@ -22,7 +22,7 @@ function searchNavbar({
         <h1 className="logo">OSC Store</h1>
         <input
           className="searchInput"
-          placeholder="Search items &  categories"
+          placeholder="Search items & categories"
           onChange={handleChange}
           value={value}
         ></input>

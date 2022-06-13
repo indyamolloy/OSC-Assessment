@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBasketShopping, faXmark } from "@fortawesome/free-solid-svg-icons";
 import "./basket.css";
@@ -77,7 +77,7 @@ function Basket({
                     </div>
 
                     <button
-                      className="removeBtn"
+                      className="removeBtn "
                       onClick={() => handleRemove(item.id)}
                     >
                       remove
@@ -86,14 +86,18 @@ function Basket({
                 );
               })}
               <div>
-                <hr />
+                <hr className="hr" />
                 {basket.length >= 1 ? (
                   <div>
                     <h3>Subtotal: £{totalPrice.toFixed(2)}</h3>
-                    <button className="addBtn">CHECKOUT NOW</button>
+                    <div className="checkoutContainer">
+                      <button className="addBtn basketCheckoutBtn">
+                        CHECKOUT NOW
+                      </button>
+                    </div>
                   </div>
                 ) : (
-                  <h3>Your shopping cart is empty</h3>
+                  <h3 className="emptyCart">Your shopping cart is empty</h3>
                 )}
               </div>
             </div>

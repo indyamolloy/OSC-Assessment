@@ -1,0 +1,19 @@
+.footerContainer {
+  background-color: #011325;
+  color: white;
+  padding: 10px 20px;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.footerLink {
+  color: white;
+}
+
+.copyright {
+  text-align: center;
+}

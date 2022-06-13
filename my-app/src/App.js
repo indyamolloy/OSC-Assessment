@@ -7,6 +7,7 @@ import Jewelery from "./pages/jewelery/Jewelery";
 import Electronics from "./pages/electronics/Electronics";
 import Navbar from "./components/navbar/Navbar";
 import SearchNavbar from "./components/searchNavbar/SearchNavbar";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -162,6 +163,7 @@ function App() {
           }
         />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

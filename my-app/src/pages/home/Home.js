@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "../../components/itemsList/ItemsList";
-import Navbar from "../../components/navbar/Navbar";
-import SearchNavbar from "../../components/searchNavbar/SearchNavbar";
+import "./home.css";
 
 function Home({ items, handleAdd, breadcrumb }) {
-  const [basket, setBasket] = useState([]);
+  // const [basket, setBasket] = useState([]);
   // const [items, setItems] = useState([]);
 
   // useEffect(() => {
@@ -18,7 +17,7 @@ function Home({ items, handleAdd, breadcrumb }) {
 
   return (
     <div>
-      <h1>Featured Items</h1>
+      <h5 className="breadcrumbs">HOME / FEATURED ITEMS</h5>
       <ItemList items={items} category="rating" handleAdd={handleAdd} />
     </div>
   );
