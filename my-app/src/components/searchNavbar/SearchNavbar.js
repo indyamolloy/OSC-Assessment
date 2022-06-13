@@ -22,7 +22,6 @@ function searchNavbar({
   return (
     <div className="searchNavbar">
       <div className="navSearchbarContainer">
-        {/* <h1 className="logo">OSC Store</h1> */}
         <Link to="/">
           <img className="logo" src={logo} alt="logo" />
         </Link>
