@@ -32,7 +32,7 @@ function ItemsList({ items, category, handleAdd }) {
                   <h2 className="productTitle">{item.title}</h2>
                   <h2 className="productPrice">
                     £{item.price}{" "}
-                    <FontAwesomeIcon className="icon" icon={faHeart} />
+                    <FontAwesomeIcon className="heartItem" icon={faHeart} />
                   </h2>
                   <p className="productDesc">
                     {item.description.substring(0, 100)}...
