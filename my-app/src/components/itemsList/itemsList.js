@@ -5,7 +5,7 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 function ItemsList({ items, category, handleAdd }) {
   //Filter out only items with rating > 4 for home page
-  const featuredItems = items.filter(function (item) {
+  const featuredItems = items.filter((item) => {
     if (category === "rating") {
       return item.rating.rate > 4;
     } else if (category === "womens") {
@@ -16,6 +16,8 @@ function ItemsList({ items, category, handleAdd }) {
       return item.category === "jewelery";
     } else if (category === "electronics") {
       return item.category === "electronics";
+    } else {
+      return null;
     }
   });
   console.log(items);
@@ -32,7 +34,7 @@ function ItemsList({ items, category, handleAdd }) {
                   <h2 className="productTitle">{item.title}</h2>
                   <h2 className="productPrice">
                     £{item.price}{" "}
-                    <FontAwesomeIcon className="heartItem" icon={faHeart} />
+                    <FontAwesomeIcon className="icon" icon={faHeart} />
                   </h2>
                   <p className="productDesc">
                     {item.description.substring(0, 100)}...
