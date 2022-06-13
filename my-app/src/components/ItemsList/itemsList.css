@@ -61,6 +61,7 @@ body {
 
 .heartItem:hover {
   cursor: pointer;
+  color: rgb(133, 0, 0);
 }
 
 .addBtn {
@@ -73,7 +74,7 @@ body {
   cursor: pointer;
 }
 
-.addBtn :hover {
+.addBtn:hover {
   background-color: #3aa735;
 }
 
