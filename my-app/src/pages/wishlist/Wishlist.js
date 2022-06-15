@@ -4,7 +4,7 @@ import "./wishlist.css";
 function Wishlist({ wishlist, handleAdd, handleRemove }) {
   return (
     <div className="wishlistContainer">
-      <h1>My Wishlist</h1>
+      <h1 className="wishlistHeading">My Wishlist</h1>
 
       <div className="wishlistItems">
         {wishlist.map((item) => {
@@ -21,7 +21,7 @@ function Wishlist({ wishlist, handleAdd, handleRemove }) {
                   <p className="itemName wishlistName">
                     {item.name.length < 35
                       ? item.name
-                      : item.name.substring(0, 35) + "..."}
+                      : item.name.substring(0, 45) + "..."}
                   </p>
                   <p className="wishlistItemPrice">£{roundedTotal}</p>
                   <div className="wishlistBtnContainer">

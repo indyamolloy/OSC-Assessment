@@ -1,3 +1,12 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.wishlistHeading {
+  font-size: 1.5em;
+  padding-left: 70px;
+}
+
 .wishlistContainer {
   padding-top: 20vh;
   padding-bottom: 10vh;
@@ -18,6 +27,7 @@
   padding: 30px 10px;
   margin: 20px;
   border: 0.5px solid black;
+  min-width: 200px;
 }
 
 .wishlistImg {
@@ -30,6 +40,7 @@
 
 .wishlistName {
   width: 100%;
+  min-height: 55px;
 }
 
 .removeBtn.wishlist {
