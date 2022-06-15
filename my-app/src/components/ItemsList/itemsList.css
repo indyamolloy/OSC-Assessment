@@ -68,9 +68,11 @@ body {
   border: none;
   background-color: #4ec648;
   color: white;
-  padding: 15px;
+  padding: 8px 15px;
   width: 100%;
-  font-weight: 800;
+  font-weight: 600;
+  font-size: 0.8em;
+
   cursor: pointer;
 }
 

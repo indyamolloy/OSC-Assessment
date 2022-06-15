@@ -1,0 +1,55 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.wishlistHeading {
+  font-size: 1.5em;
+  padding-left: 70px;
+}
+
+.wishlistContainer {
+  padding-top: 20vh;
+  padding-bottom: 10vh;
+  min-height: 70vh;
+}
+
+.wishlistItems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.wishlistItemContainer {
+  display: flex;
+  width: 20vw;
+  max-width: 20vw;
+  justify-content: center;
+  padding: 30px 10px;
+  margin: 20px;
+  border: 0.5px solid black;
+  min-width: 200px;
+}
+
+.wishlistImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 30vh;
+  max-width: 200px;
+}
+
+.wishlistName {
+  width: 100%;
+  min-height: 55px;
+}
+
+.removeBtn.wishlist {
+  color: gray;
+  text-decoration: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.removeBtn.wishlist:hover {
+  color: black;
+}

@@ -8,6 +8,7 @@ import Electronics from "./pages/electronics/Electronics.js";
 import Navbar from "./components/navbar/Navbar.js";
 import SearchNavbar from "./components/searchNavbar/SearchNavbar.js";
 import Footer from "./components/footer/Footer.js";
+import Wishlist from "./pages/wishlist/Wishlist.js";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -17,6 +18,7 @@ function App() {
   const [searchInput, setSearchInput] = useState("");
   const [searchedItems, setSearchedItems] = useState([]);
   const [itemsSearched, setItemsSearched] = useState(false);
+  const [wishlist, setWishlist] = useState([]);
 
   //fetching data from api and setting state to object
   useEffect(() => {
@@ -34,12 +36,18 @@ function App() {
     if (!inBasket) {
       setBasket([
         ...basket,
-        { id: id, image: image, name: name, price: price, quantity: 1 },
+        {
+          id: id,
+          image: image,
+          name: name,
+          price: price,
+          quantity: 1,
+        },
       ]);
       setModal(true);
     } else {
       const duplicateItem = basket.find((item) => item.id === id);
-      console.log(basket.indexOf(duplicateItem));
+
       const index = basket.indexOf(duplicateItem);
       setBasket([
         ...basket.slice(0, index),
@@ -74,6 +82,12 @@ function App() {
     setBasket([...basket.slice(0, index), ...basket.slice(index + 1)]);
   }
 
+  function handleRemoveWishlist(id) {
+    const clickedItem = wishlist.find((item) => item.id === id);
+    const index = wishlist.indexOf(clickedItem);
+    setWishlist([...wishlist.slice(0, index), ...wishlist.slice(index + 1)]);
+  }
+
   //open modal
   function handleClick() {
     setModal(!modal);
@@ -103,6 +117,23 @@ function App() {
     setModal(false);
   }
 
+  //Add items to wishlist
+  function handleAddToWishlist(id, image, name, price) {
+    const inWishlist = wishlist.some((item) => item.id === id);
+    if (!inWishlist) {
+      setWishlist([
+        ...wishlist,
+        {
+          id: id,
+          image: image,
+          name: name,
+          price: price,
+          key: id,
+        },
+      ]);
+    }
+  }
+
   return (
     <BrowserRouter>
       <SearchNavbar
@@ -116,6 +147,7 @@ function App() {
         handleSearch={handleSearch}
         value={input}
         handleCloseModal={handleCloseModal}
+        wishlist={wishlist}
       />
       <Navbar />
       <Routes>
@@ -125,6 +157,8 @@ function App() {
             <Home
               items={itemsSearched ? searchedItems : items}
               handleAdd={handleAdd}
+              handleAddToWishlist={handleAddToWishlist}
+              wishlist={wishlist}
             />
           }
         />
@@ -134,6 +168,8 @@ function App() {
             <Womens
               items={itemsSearched ? searchedItems : items}
               handleAdd={handleAdd}
+              handleAddToWishlist={handleAddToWishlist}
+              wishlist={wishlist}
             />
           }
         />
@@ -143,6 +179,8 @@ function App() {
             <Mens
               items={itemsSearched ? searchedItems : items}
               handleAdd={handleAdd}
+              handleAddToWishlist={handleAddToWishlist}
+              wishlist={wishlist}
             />
           }
         />
@@ -152,6 +190,8 @@ function App() {
             <Jewelery
               items={itemsSearched ? searchedItems : items}
               handleAdd={handleAdd}
+              handleAddToWishlist={handleAddToWishlist}
+              wishlist={wishlist}
             />
           }
         />
@@ -160,6 +200,19 @@ function App() {
           element={
             <Electronics
               items={itemsSearched ? searchedItems : items}
+              handleAdd={handleAdd}
+              handleAddToWishlist={handleAddToWishlist}
+              wishlist={wishlist}
+            />
+          }
+        />
+        <Route
+          path="/wishlist"
+          element={
+            <Wishlist
+              wishlist={wishlist}
+              handleRemove={handleRemoveWishlist}
+              items={items}
               handleAdd={handleAdd}
             />
           }
