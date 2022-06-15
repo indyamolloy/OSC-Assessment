@@ -18,7 +18,13 @@ function searchNavbar({
   handleSearch,
   value,
   handleCloseModal,
+  wishlist,
 }) {
+  //find total num items in wishlist to display
+  const totalWishlistQuantity = wishlist.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
   return (
     <div className="searchNavbar">
       <div className="navSearchbarContainer">
@@ -35,7 +41,9 @@ function searchNavbar({
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </button>
         <div className="iconsContainer">
-          <FontAwesomeIcon className="icon" icon={faHeart} />
+          <Link to="/wishlist">
+            <FontAwesomeIcon className="icon" icon={faHeart} />
+          </Link>
           <Basket
             basket={basket}
             handleClick={handleClick}
