@@ -1,5 +1,5 @@
 # OSC Assessment
-This project was built with React.js. The completed project can be viewed at https://osc-store-9o9ybk4y5-indyamolloy.vercel.app/
+This project was built with React.js. The completed project can be viewed at https://store-project-one.vercel.app/
 
 ### Roadmap
  - [X] Items can be added to mini basket
