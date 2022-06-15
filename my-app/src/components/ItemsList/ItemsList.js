@@ -28,7 +28,7 @@ function ItemsList({
     }
   });
 
-  //return list of items that are in the wishlist
+  //return list of items that are in the wishlist(as long as wishlist isn't empty)
   function findWishlistItems(array1, array2) {
     if (array1 && array2) {
       return array1.filter((object1) => {
@@ -55,6 +55,7 @@ function ItemsList({
                   <h2 className="productPrice">
                     £{item.price}{" "}
                     <FontAwesomeIcon
+                      title="Add to wishlist"
                       style={{
                         color: "red",
                       }}

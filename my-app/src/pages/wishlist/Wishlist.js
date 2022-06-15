@@ -1,34 +1,50 @@
 import React from "react";
 import "./wishlist.css";
 
-function Wishlist({ wishlist, handleRemove }) {
+function Wishlist({ wishlist, handleAdd, handleRemove }) {
   return (
     <div className="wishlistContainer">
       <h1>My Wishlist</h1>
 
       <div className="wishlistItems">
-        <div>
-          {wishlist.map((item) => {
-            const roundedTotal = item.price.toFixed(2);
-            return (
-              <div key={item.id}>
-                <div className="basketItemContainer">
-                  <img className="itemImage" src={item.image} alt="" />
-                  <div className="itemDetails">
-                    <p className="itemName">{item.name}</p>
-                    <p className="itemPrice">£{roundedTotal}</p>
+        {wishlist.map((item) => {
+          const roundedTotal = item.price.toFixed(2);
+          return (
+            <div key={item.id} className="wishlistItemContainer">
+              <div>
+                <img
+                  className="itemImage wishlistImg"
+                  src={item.image}
+                  alt=""
+                />
+                <div className="itemDetails">
+                  <p className="itemName wishlistName">
+                    {item.name.length < 35
+                      ? item.name
+                      : item.name.substring(0, 35) + "..."}
+                  </p>
+                  <p className="wishlistItemPrice">£{roundedTotal}</p>
+                  <div className="wishlistBtnContainer">
                     <button
-                      className="removeBtn "
+                      className="addBtn"
+                      onClick={() =>
+                        handleAdd(item.id, item.image, item.title, item.price)
+                      }
+                    >
+                      ADD TO CART
+                    </button>
+                    <button
+                      className="removeBtn wishlist"
                       onClick={() => handleRemove(item.id)}
                     >
-                      remove
+                      Remove
                     </button>
                   </div>
                 </div>
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

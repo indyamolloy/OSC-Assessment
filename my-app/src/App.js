@@ -213,6 +213,7 @@ function App() {
               wishlist={wishlist}
               handleRemove={handleRemoveWishlist}
               items={items}
+              handleAdd={handleAdd}
             />
           }
         />
