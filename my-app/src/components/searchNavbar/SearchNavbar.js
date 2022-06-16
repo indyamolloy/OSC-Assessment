@@ -21,10 +21,10 @@ function searchNavbar({
   wishlist,
 }) {
   //find total num items in wishlist to display
-  const totalWishlistQuantity = wishlist.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
+  // const totalWishlistQuantity = wishlist.reduce(
+  //   (total, item) => total + item.quantity,
+  //   0
+  // );
   return (
     <div className="searchNavbar">
       <div className="navSearchbarContainer">
