@@ -51,7 +51,11 @@ function ItemsList({
               return (
                 <div className="itemContainer" key={item.id}>
                   <img className="productImg" src={item.image} alt="product" />
-                  <h2 className="productTitle">{item.title}</h2>
+                  <h2 className="productTitle">
+                    {item.title.length < 35
+                      ? item.title
+                      : item.title.substring(0, 45) + "..."}
+                  </h2>
                   <h2 className="productPrice">
                     £{item.price}{" "}
                     <FontAwesomeIcon
