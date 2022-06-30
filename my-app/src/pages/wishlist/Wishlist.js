@@ -10,7 +10,7 @@ function Wishlist({ wishlist, handleAdd, handleRemove }) {
         {wishlist.map((item) => {
           const roundedTotal = item.price.toFixed(2);
           return (
-            <div key={item.id} className="wishlistItemContainer">
+            <div key={item.id} className="wishlistItem">
               <div>
                 <img
                   className="itemImage wishlistImg"
@@ -26,7 +26,7 @@ function Wishlist({ wishlist, handleAdd, handleRemove }) {
                   <p className="wishlistItemPrice">£{roundedTotal}</p>
                   <div className="wishlistBtnContainer">
                     <button
-                      className="addBtn"
+                      className="addBtn wishlist"
                       onClick={() =>
                         handleAdd(item.id, item.image, item.title, item.price)
                       }

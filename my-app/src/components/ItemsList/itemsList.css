@@ -73,9 +73,10 @@ body {
 
 .addBtn {
   border: none;
-  background-color: #4ec648;
+  /* background-color: #4ec648; */
+  background-color: #696625;
   color: white;
-  padding: 8px 15px;
+  padding: 10px 18px;
   width: 50%;
 
   font-weight: 600;
@@ -85,7 +86,7 @@ body {
 }
 
 .addBtn:hover {
-  background-color: #3aa735;
+  background-color: #464418;
 }
 
 .loadingScreen {
