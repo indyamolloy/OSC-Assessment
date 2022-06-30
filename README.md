@@ -12,4 +12,4 @@ This project was built with React.js. The completed project can be viewed at htt
 *Given more time with this assessment, I would refactor code, implement tests for the API & functions, reorganise CSS (CSS modules) and make the website mobile responsive.
 
 <img width="800px" alt="Screenshot 2022-06-30 at 14 13 36" src="https://user-images.githubusercontent.com/93342205/176690500-1b6bd2b6-2f55-4dbb-a617-349379d22de8.png">
-<img width="800px" alt="Screenshot 2022-06-30 at 14 32 06" src="https://user-images.githubusercontent.com/93342205/176690532-0b7cb16e-deff-4bfb-89a3-d9bae2faf8b8.png">
+<img width="800px" alt="Screenshot 2022-06-30 at 14 32 06" src="https://user-images.githubusercontent.com/93342205/176690811-673f1cdf-9221-4ced-8a25-33ba2e9232ce.png">
