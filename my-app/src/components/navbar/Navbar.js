@@ -13,11 +13,11 @@ function Navbar() {
           <Link className="navLink" to="/mens">
             Mens
           </Link>
-          <Link className="navLink" to="/jewelery">
-            Jewelery
+          <Link className="navLink" to="/accessories">
+            Accessories
           </Link>
-          <Link className="navLink" to="/electronics">
-            Electronics
+          <Link className="navLink" to="/homeProducts">
+            Home Items
           </Link>
           <Link className="navLink featured" to="/">
             Featured Items

@@ -1,5 +1,6 @@
 body {
   overflow-x: hidden;
+  background-color: #fefaf9;
 }
 
 .container {
@@ -12,25 +13,29 @@ body {
   display: flex;
   flex-wrap: wrap;
   max-width: 80%;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-top: 50px;
   padding-bottom: 50px;
   z-index: 0;
 }
 
 .itemContainer {
-  width: 15vw;
-  padding: 50px;
+  width: 20vw;
+  padding: 10px;
   padding-bottom: 50px;
-  max-height: 70vh;
-  margin-bottom: 40px;
+  max-height: 100vh;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
 }
 
 .productImg {
-  height: 30vh;
-  width: 100%;
-  min-width: 150px;
-  max-width: 200px;
+  height: 70vh;
+  width: 25vw;
+  min-height: 400px;
+  min-width: 100px;
+  max-width: 300px;
+  object-fit: cover;
 }
 
 .productTitle {
@@ -43,7 +48,7 @@ body {
 }
 
 .productDesc {
-  min-height: 20vh;
+  min-height: 15vh;
   max-height: 25vh;
   overflow: scroll;
 }
@@ -51,12 +56,14 @@ body {
 .productPrice {
   font-size: 1em;
   font-weight: 400;
+  align-self: flex-start;
 }
 
 .heartItem {
   font-size: 1em;
   padding-left: 50px;
   color: rgb(255, 80, 80);
+  align-self: flex-end;
 }
 
 .heartItem:hover {
@@ -69,10 +76,11 @@ body {
   background-color: #4ec648;
   color: white;
   padding: 8px 15px;
-  width: 100%;
+  width: 50%;
+
   font-weight: 600;
   font-size: 0.8em;
-
+  align-self: center;
   cursor: pointer;
 }
 

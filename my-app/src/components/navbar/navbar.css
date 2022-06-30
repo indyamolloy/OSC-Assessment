@@ -2,7 +2,7 @@
 
 .navbar {
   height: 50px;
-  background-color: #011325;
+  background-color: #d3c4b0;
   display: flex;
   justify-content: center;
   min-width: fit-content;
@@ -26,7 +26,7 @@
   border: none;
   padding: 5px 25px;
   cursor: pointer;
-  color: rgb(255, 255, 255);
+  color: rgb(58, 54, 54);
   text-decoration: none;
 }
 
@@ -41,6 +41,7 @@
 }
 
 .featured {
-  background-color: #fe4e3a;
+  color: white;
+  background-color: #66773b;
   padding: 16px;
 }

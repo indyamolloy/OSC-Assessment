@@ -1,13 +1,13 @@
 import React from "react";
 import ItemsList from "../../components/ItemsList/ItemsList.js";
 
-function Jewelery({ items, handleAdd, handleAddToWishlist, wishlist }) {
+function Accessories({ items, handleAdd, handleAddToWishlist, wishlist }) {
   return (
     <div>
-      <h5 className="breadcrumbs">HOME / JEWELERY</h5>
+      <h5 className="breadcrumbs">HOME / ACCESSORIES</h5>
       <ItemsList
         items={items}
-        category="jewelery"
+        category="accessories"
         handleAdd={handleAdd}
         handleAddToWishlist={handleAddToWishlist}
         wishlist={wishlist}
@@ -16,4 +16,4 @@ function Jewelery({ items, handleAdd, handleAddToWishlist, wishlist }) {
   );
 }
 
-export default Jewelery;
+export default Accessories;
