@@ -14,15 +14,15 @@ function ItemsList({
   //Filter out only items with rating > 4 for home page
   const itemsList = items.filter((item) => {
     if (category === "rating") {
-      return item.rating.rate > 4;
+      return item.rating > 4;
     } else if (category === "womens") {
       return item.category === "women's clothing";
     } else if (category === "mens") {
       return item.category === "men's clothing";
-    } else if (category === "jewelery") {
-      return item.category === "jewelery";
-    } else if (category === "electronics") {
-      return item.category === "electronics";
+    } else if (category === "accessories") {
+      return item.category === "accessories";
+    } else if (category === "homeProducts") {
+      return item.category === "home";
     } else {
       return null;
     }

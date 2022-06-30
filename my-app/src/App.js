@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import Home from "./pages/home/Home.js";
 import Womens from "./pages/womens/Womens.js";
 import Mens from "./pages/mens/Mens.js";
-import Jewelery from "./pages/jewelery/Jewelery.js";
-import Electronics from "./pages/electronics/Electronics.js";
+import Accessories from "./pages/accessories/Accessories.js";
+import HomeProducts from "./pages/homeProducts/HomeProducts.js";
 import Navbar from "./components/navbar/Navbar.js";
 import SearchNavbar from "./components/searchNavbar/SearchNavbar.js";
 import Footer from "./components/footer/Footer.js";
@@ -23,9 +23,11 @@ function App() {
   //fetching data from api and setting state to object
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("https://fakestoreapi.com/products");
+      const response = await fetch(
+        "https://eco-store-be.herokuapp.com/products"
+      );
       const data = await response.json();
-      setItems(data);
+      setItems(data.payload);
     };
     fetchData();
   }, [setItems, searchInput]);
@@ -40,7 +42,7 @@ function App() {
           id: id,
           image: image,
           name: name,
-          price: price,
+          price: Number(price),
           quantity: 1,
         },
       ]);
@@ -127,7 +129,7 @@ function App() {
           id: id,
           image: image,
           name: name,
-          price: price,
+          price: Number(price),
           key: id,
         },
       ]);
@@ -185,9 +187,9 @@ function App() {
           }
         />
         <Route
-          path="/jewelery"
+          path="/accessories"
           element={
-            <Jewelery
+            <Accessories
               items={itemsSearched ? searchedItems : items}
               handleAdd={handleAdd}
               handleAddToWishlist={handleAddToWishlist}
@@ -196,9 +198,9 @@ function App() {
           }
         />
         <Route
-          path="/electronics"
+          path="/homeProducts"
           element={
-            <Electronics
+            <HomeProducts
               items={itemsSearched ? searchedItems : items}
               handleAdd={handleAdd}
               handleAddToWishlist={handleAddToWishlist}
