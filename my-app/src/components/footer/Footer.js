@@ -34,7 +34,7 @@ function Footer() {
             window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
           }}
         >
-          Electronics
+          Home
         </Link>
         <Link
           className="footerLink"
@@ -43,11 +43,11 @@ function Footer() {
             window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
           }}
         >
-          Jewelery
+          Accessories
         </Link>
       </div>
       <div>
-        <p className="copyright">© {date} OSC store. All rights reserved.</p>
+        <p className="copyright">© {date} EcoStore. All rights reserved.</p>
       </div>
     </div>
   );
