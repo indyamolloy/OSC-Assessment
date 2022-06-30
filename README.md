@@ -1,4 +1,4 @@
-# OSC Assessment
+# EcoStore E-commerce Website
 This project was built with React.js. The completed project can be viewed at https://store-project-one.vercel.app/
 
 ### Roadmap
